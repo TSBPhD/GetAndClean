@@ -12,82 +12,82 @@ The script "run_analysis.R"" was created to generate a tidy data set ("tidy.txt"
 ### Variables utilized in "run_analysis.R"" are as follows:
 
 activitiesloc
-    relative file location of file "activity_labels.txt"
+    - relative file location of file "activity_labels.txt"
     
 featuresloc
-    relative file location of file "features.txt"
+    - relative file location of file "features.txt"
 
 Xtestloc
-    relative file location of file "X_test.txt"
+    - relative file location of file "X_test.txt"
 
 ytestloc
-    relative file location of file "y_test.txt"
+    - relative file location of file "y_test.txt"
 
 Xtrainloc
-    relative file location of file "X_train.txt"
+    - relative file location of file "X_train.txt"
 
 ytrainloc
     relative file location of file "y_train.txt"
 
 subjecttestloc
-    relative file location of file "subject_test.txt"
+    - relative file location of file "subject_test.txt"
 
 subjecttrainloc
-    relative file location of file "subject_train.txt"
+    - relative file location of file "subject_train.txt"
 
 activities
     data frame read in from activitiesloc
     
 features
-    data frame read in from featuresloc
+    - data frame read in from featuresloc
     
 test
-    data frame read in from Xtestloc
+    - data frame read in from Xtestloc
     
 testLabel
-    data frame read in from ytestloc
+    - data frame read in from ytestloc
     
 train
-    data frame read in from Xtrainloc
+    - data frame read in from Xtrainloc
     
 trainLabel
-    data frame read in from ytrainloc
+    - data frame read in from ytrainloc
     
 testSubject
-    data frame read in from subjecttestloc
+    - data frame read in from subjecttestloc
     
 trainSubject
-    data frame read in from subjecttrainloc
+    - data frame read in from subjecttrainloc
     
 combined 
-    all rows from test and train
+    - all rows from test and train
     
 meancol
-    a list of all comlumns in 'combined' with names containing "mean()"
+    - a list of all comlumns in 'combined' with names containing "mean()"
     
 stdcol
-    a list of all columns in 'combined' with names containing "std()"
+    - a list of all columns in 'combined' with names containing "std()"
 
 meanstd <- cbind(combined[, c(meancol, stdcol)])
-    Column combine of all columns in 'combined' with names containing "mean()" or "std()"
+    - Column combine of all columns in 'combined' with names containing "mean()" or "std()"
     
 testSubLab
-    Combines the subject numbers and activity labels from 'testSubject' and 'testLabel'
+    - Combines the subject numbers and activity labels from 'testSubject' and 'testLabel'
     
 trainSubLab
-    Combines the subject numbers and activity labels from 'trainSubject' and 'trainLabel'
+    - Combines the subject numbers and activity labels from 'trainSubject' and 'trainLabel'
     
 combinedSubLab
-    row binds 'testSubLab' and 'trainSubLab' to form two columns ("subject" and "label") that match 'combined'
+    - row binds 'testSubLab' and 'trainSubLab' to form two columns ("subject" and "label") that match 'combined'
 
 complete <- cbind(combinedSubLab, combined)
-    adds subject numbers, activity labels, and human readable activity ('combinedSubLab')  to 'combined'
+    - adds subject numbers, activity labels, and human readable activity ('combinedSubLab')  to 'combined'
 
 meanstddesc 
-    adds subject numbers, activity labels, and human readable activity ('combinedSubLab') to 'meanstd'
+    - adds subject numbers, activity labels, and human readable activity ('combinedSubLab') to 'meanstd'
     
 tidy
-    the average of each variable in 'meanstddesc' for each activity and each subject; the feature 'label' was removed from this data set
+    - the average of each variable in 'meanstddesc' for each activity and each subject; the feature 'label' was removed from this data set
 
 
 ## Features in "tidy.txt""
@@ -97,12 +97,12 @@ The file tidy.txt contains the average of each variable from X_train and X_test 
 Additionally, tidy.txt includes two features besides the average of measurements:
 
 study_subject
-    the number of the study subject performing the activity being measured 
+    - the number of the study subject performing the activity being measured 
         ranges from 1 - 30
 
 activity
-    the human readable label of the activity; there were 6 possible activities, 
-        WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING,
+    - the human readable label of the activity; there were 6 possible activities, 
+        -- WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING,
         LAYING
 
 
